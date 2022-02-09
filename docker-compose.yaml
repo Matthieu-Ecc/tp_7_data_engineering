@@ -1,0 +1,13 @@
+version: "1"
+services:
+  back_server:
+    build: back/.
+    container_name: back_server
+    ports:
+      - "3003:3003"
+
+  front-end:
+    build: front/.
+    container_name: front_web
+    ports:
+      - "3000:3000"

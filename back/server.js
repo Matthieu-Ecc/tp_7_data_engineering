@@ -14,7 +14,7 @@ app.use(
     })
 );
 
-app.get('/', function(req, res){
+app.get('/api/', function(req, res){
     if(!req.session.pageCountByCurrentUserOrAnyNameYouWant)
         req.session.pageCountByCurrentUserOrAnyNameYouWant = 0;
     req.session.pageCountByCurrentUserOrAnyNameYouWant++;
@@ -25,5 +25,6 @@ app.get('/', function(req, res){
 
 app.listen(PORT, () => {
     app.listen(PORT, HOST);
-    console.log(`Running on http://${HOST}:${PORT}`);
+    if(HOST.match('0.0.0.0')){
+    console.log(`Running on http://localhost:${PORT}`);}
 });
