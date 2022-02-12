@@ -3,7 +3,7 @@ services:
   back_server:
     build: 
       context: back/.
-      dockerfile: back/dockerfile1
+      dockerfile: dockerfile
     container_name: back_server
     ports:
       - "3003:3003"
@@ -11,7 +11,7 @@ services:
   front-end:
     build: 
       context: front/.
-      dockerfile: front/dockerfile
+      dockerfile: dockerfile
     container_name: front_web
     ports:
       - "3000:3000"
