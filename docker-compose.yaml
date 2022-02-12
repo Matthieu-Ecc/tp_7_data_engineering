@@ -1,13 +1,17 @@
 version: "3"
 services:
   back_server:
-    build: back/.
+    build: 
+      context: back/.
+      dockerfile: back/dockerfile1
     container_name: back_server
     ports:
       - "3003:3003"
 
   front-end:
-    build: front/.
+    build: 
+      context: front/.
+      dockerfile: front/dockerfile
     container_name: front_web
     ports:
       - "3000:3000"
