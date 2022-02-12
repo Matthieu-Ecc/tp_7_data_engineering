@@ -14,7 +14,7 @@ pipeline {
             steps{
                 echo 'test with pytest'
                 dir('.'){
-                    bat 'pytest testapp.py'
+                    bat 'node testapp.js'
                 }
             }
         }
