@@ -1,9 +1,11 @@
 const express = require("express");
 const session = require('express-session');
+const cors = require('cors');
 const PORT = 3003;
 const HOST = '0.0.0.0';
 const app = express();
 
+app.use(cors());
 
 app.use(
     session({
@@ -23,8 +25,7 @@ app.get('/api/', function(req, res){
     });
 });
 
-app.listen(PORT, () => {
-    app.listen(PORT, HOST);
-    if(HOST.match('0.0.0.0')){
-    console.log(`Running on http://localhost:${PORT}`);}
-});
+
+app.listen(PORT, HOST);
+if(HOST.match('0.0.0.0')){
+console.log(`Running on http://localhost:${PORT}/api/`)};
